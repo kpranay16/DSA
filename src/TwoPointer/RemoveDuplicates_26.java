@@ -1,0 +1,31 @@
+package TwoPointer;
+
+public class RemoveDuplicates_26 {
+
+        public int removeDuplicates(int[] nums) {
+            if (nums.length == 0) return 0;
+
+            // int i = 1;
+
+            // for (int j = 1; j < nums.length; j++) {
+            //     if (nums[j] != nums[i - 1]) {
+            //         nums[i] = nums[j];
+            //         i++;
+            //     }
+            // }
+            int i=0,j=1;
+            while(j<nums.length){
+                if(nums[i]==nums[j]){
+                    j++;
+                }else{
+                    i++;
+                    nums[i]=nums[j];
+                    j++;
+                }
+            }
+
+
+            return i+1;
+        }
+
+}
